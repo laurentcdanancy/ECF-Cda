@@ -1,0 +1,2585 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Rapport de listes MPD
+</title>
+<link href="Theme_BleuClair.css" type="text/css" rel="stylesheet">
+</head>
+<!--Ce fichier a été généré automatiquement par PowerDesigner.-->
+<body>
+<h2>
+<a name="299">Table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="300">Fiche de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#299">Coordonnees Mutuelle</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#299">COORDONNEES_MUTUELLE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">SGBD
+</p>
+</td>
+<td width="75%">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="301">Nom de contrainte de paramètre de contrôle de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKT_COORDONNEES_MUTUELLE
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="302">Règle de validation serveur de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="303">Aperçu du code de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">if exists(select 1 from sys.sysforeignkey where role='FK_COORDONN_LOCALISER_MUTUELLE') then<br />
+    alter table COORDONNEES_MUTUELLE<br />
+       delete foreign key FK_COORDONN_LOCALISER_MUTUELLE<br />
+end if;<br />
+<br />
+drop index if exists COORDONNEES_MUTUELLE.LOCALISER_FK;<br />
+<br />
+drop index if exists COORDONNEES_MUTUELLE.COORDONNEES_MUTUELLE_PK;<br />
+<br />
+drop table if exists COORDONNEES_MUTUELLE;<br />
+<br />
+/*==============================================================*/<br />
+/* Table : COORDONNEES_MUTUELLE                                 */<br />
+/*==============================================================*/<br />
+create table COORDONNEES_MUTUELLE <br />
+(<br />
+   ID_ADRESSE_MUTUELLE  char(10)                       not null,<br />
+   ADRESSE_MUTUELLE_    varchar(255)                   not null,<br />
+   CODE_POSTAL          integer                        not null,<br />
+   VILLE                integer                        not null,<br />
+   TELEPHONE            integer                        not null,<br />
+   EMAIL                varchar(255)                   null,<br />
+   DEPARTEMENT          integer                        null,<br />
+   constraint PK_COORDONNEES_MUTUELLE primary key clustered (ID_ADRESSE_MUTUELLE)<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : COORDONNEES_MUTUELLE_PK                              */<br />
+/*==============================================================*/<br />
+create unique clustered index COORDONNEES_MUTUELLE_PK on COORDONNEES_MUTUELLE (<br />
+ID_ADRESSE_MUTUELLE ASC<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : LOCALISER_FK                                         */<br />
+/*==============================================================*/<br />
+create index LOCALISER_FK on COORDONNEES_MUTUELLE (<br />
+<br />
+);<br />
+<br />
+alter table COORDONNEES_MUTUELLE<br />
+   add constraint FK_COORDONN_LOCALISER_MUTUELLE foreign key ()<br />
+      references MUTUELLE<br />
+      on update restrict<br />
+      on delete restrict;<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="304">Liste des diagrammes contenant la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp1.htm#5">sparadrap</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp1.htm#5">SPARADRAP</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="305">Liste des références sortantes de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Colonnes de clé étrangère
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp35.htm#72">localiser</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp35.htm#72">LOCALISER</a>
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="306">Liste de tous les objets dépendant de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp35.htm#72">localiser</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp35.htm#72">LOCALISER</a>
+</p>
+</td>
+<td>
+<p align="left">Référence
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="307">Liste des attributs étendus de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">At
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DbspaceIn
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Encrypted
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">PctFree
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Entier)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TemporaryTable
+</p>
+</td>
+<td>
+<p align="left">(Chaîne)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="308">Liste des colonnes de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp12.htm#309">id Adresse Mutuelle</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp12.htm#309">ID_ADRESSE_MUTUELLE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp12.htm#316">Adresse Mutuelle</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp12.htm#316">ADRESSE_MUTUELLE_</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp12.htm#322">Code Postal</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp12.htm#322">CODE_POSTAL</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp12.htm#328">Ville</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp12.htm#328">VILLE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp12.htm#334">Telephone</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp12.htm#334">TELEPHONE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp12.htm#340">Email</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp12.htm#340">EMAIL</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp12.htm#346">Departement</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp12.htm#346">DEPARTEMENT</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="309">Colonne id Adresse Mutuelle de la table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="310">Fiche de la colonne id Adresse Mutuelle de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#309">id Adresse Mutuelle</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#309">ID_ADRESSE_MUTUELLE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">&lt;Non défini&gt;
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="311">Nom de contrainte de paramètre de contrôle de la colonne id Adresse Mutuelle de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_ADRESSE_MUTUEL_COORDONN
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="312">Contrôles standard de la colonne id Adresse Mutuelle de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="313">Règle de validation serveur de la colonne id Adresse Mutuelle de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="314">Liste de tous les objets dépendant de la colonne de table id Adresse Mutuelle</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">id Adresse Mutuelle
+</p>
+</td>
+<td>
+<p align="left">ID_ADRESSE_MUTUELLE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp12.htm#353">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp12.htm#353">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="315">Liste des attributs étendus de la colonne de table id Adresse Mutuelle</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="316">Colonne Adresse Mutuelle de la table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="317">Fiche de la colonne Adresse Mutuelle de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#316">Adresse Mutuelle</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#316">ADRESSE_MUTUELLE_</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">varchar(255)
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="318">Nom de contrainte de paramètre de contrôle de la colonne Adresse Mutuelle de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ADRESSE_MUTUELLE__COORDONN
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="319">Contrôles standard de la colonne Adresse Mutuelle de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="320">Règle de validation serveur de la colonne Adresse Mutuelle de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="321">Liste des attributs étendus de la colonne de table Adresse Mutuelle</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="322">Colonne Code Postal de la table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="323">Fiche de la colonne Code Postal de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#322">Code Postal</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#322">CODE_POSTAL</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="324">Nom de contrainte de paramètre de contrôle de la colonne Code Postal de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_CODE_POSTAL_COORDONN
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="325">Contrôles standard de la colonne Code Postal de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="326">Règle de validation serveur de la colonne Code Postal de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="327">Liste des attributs étendus de la colonne de table Code Postal</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="328">Colonne Ville de la table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="329">Fiche de la colonne Ville de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#328">Ville</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#328">VILLE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="330">Nom de contrainte de paramètre de contrôle de la colonne Ville de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_VILLE_COORDONN
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="331">Contrôles standard de la colonne Ville de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="332">Règle de validation serveur de la colonne Ville de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="333">Liste des attributs étendus de la colonne de table Ville</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="334">Colonne Telephone de la table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="335">Fiche de la colonne Telephone de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#334">Telephone</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#334">TELEPHONE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="336">Nom de contrainte de paramètre de contrôle de la colonne Telephone de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_TELEPHONE_COORDONN
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="337">Contrôles standard de la colonne Telephone de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="338">Règle de validation serveur de la colonne Telephone de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="339">Liste des attributs étendus de la colonne de table Telephone</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="340">Colonne Email de la table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="341">Fiche de la colonne Email de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#340">Email</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#340">EMAIL</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">varchar(255)
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="342">Nom de contrainte de paramètre de contrôle de la colonne Email de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_EMAIL_COORDONN
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="343">Contrôles standard de la colonne Email de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="344">Règle de validation serveur de la colonne Email de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="345">Liste des attributs étendus de la colonne de table Email</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="346">Colonne Departement de la table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="347">Fiche de la colonne Departement de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#346">Departement</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#346">DEPARTEMENT</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="348">Nom de contrainte de paramètre de contrôle de la colonne Departement de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_DEPARTEMENT_COORDONN
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="349">Contrôles standard de la colonne Departement de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="350">Règle de validation serveur de la colonne Departement de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="351">Liste des attributs étendus de la colonne de table Departement</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="352">Liste des clés de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Primaire
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp12.htm#353">Identifiant_1</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp12.htm#353">IDENTIFIANT_1</a>
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="353">Clé Identifiant_1 de la table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="354">Fiche de la clé Identifiant_1 de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#353">Identifiant_1</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#353">IDENTIFIANT_1</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#299">Coordonnees Mutuelle</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="355">Aperçu du code de la clé Identifiant_1 de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">if exists(<br />
+   select 1 from sys.sysconstraint k<br />
+      join sys.systab t on (t.object_id = k.table_object_id and t.table_name='COORDONNEES_MUTUELLE')<br />
+   where<br />
+      k.constraint_type = 'P'<br />
+) then<br />
+    alter table COORDONNEES_MUTUELLE<br />
+   delete primary key<br />
+end if;<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="356">Liste des colonnes de la clé de table Identifiant_1</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp12.htm#309">id Adresse Mutuelle</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp12.htm#309">ID_ADRESSE_MUTUELLE</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="357">Liste de tous les objets dépendant de la clé de table Identifiant_1</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp12.htm#359">COORDONNEES_MUTUELLE_PK</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp12.htm#359">COORDONNEES_MUTUELLE_PK</a>
+</p>
+</td>
+<td>
+<p align="left">Index
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="358">Liste des index de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Unique
+</p>
+</td>
+<td class="Header">
+<p align="center">Cluster
+</p>
+</td>
+<td class="Header">
+<p align="center">Primaire
+</p>
+</td>
+<td class="Header">
+<p align="center">Clé étrangère
+</p>
+</td>
+<td class="Header">
+<p align="center">Clé alternative
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp12.htm#359">COORDONNEES_MUTUELLE_PK</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp12.htm#359">COORDONNEES_MUTUELLE_PK</a>
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp12.htm#364">LOCALISER_FK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp12.htm#364">LOCALISER_FK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">X
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="359">Index COORDONNEES_MUTUELLE_PK de la table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="360">Fiche de l'index COORDONNEES_MUTUELLE_PK de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#359">COORDONNEES_MUTUELLE_PK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#359">COORDONNEES_MUTUELLE_PK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#299">Coordonnees Mutuelle</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="361">Aperçu du code de l'index COORDONNEES_MUTUELLE_PK de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists COORDONNEES_MUTUELLE.COORDONNEES_MUTUELLE_PK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : COORDONNEES_MUTUELLE_PK                              */<br />
+/*==============================================================*/<br />
+create unique clustered index COORDONNEES_MUTUELLE_PK on COORDONNEES_MUTUELLE (<br />
+ID_ADRESSE_MUTUELLE ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="362">Liste des colonnes d'index de l'index de table COORDONNEES_MUTUELLE_PK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">id Adresse Mutuelle
+</p>
+</td>
+<td>
+<p align="left">ID_ADRESSE_MUTUELLE
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="363">Liste des attributs étendus de l'index de table COORDONNEES_MUTUELLE_PK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="364">Index LOCALISER_FK de la table Coordonnees Mutuelle</a> 
+</h2>
+<h3>
+<a name="365">Fiche de l'index LOCALISER_FK de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#364">LOCALISER_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#364">LOCALISER_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp12.htm#299">Coordonnees Mutuelle</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="366">Aperçu du code de l'index LOCALISER_FK de la table Coordonnees Mutuelle</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists COORDONNEES_MUTUELLE.LOCALISER_FK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : LOCALISER_FK                                         */<br />
+/*==============================================================*/<br />
+create index LOCALISER_FK on COORDONNEES_MUTUELLE (<br />
+<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="367">Liste des attributs étendus de l'index de table LOCALISER_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<hr />
+<table><tr>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp11.htm">Précédent</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Accueil_BleuClair.html">Accueil</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp13.htm">Suivant</a></td></tr></table></td></tr></table>
+<br />
+<br />
+</body>
+</html>

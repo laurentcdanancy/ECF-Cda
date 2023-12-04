@@ -1,0 +1,146 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Rapport de listes MPD
+</title>
+<link href="Theme_BleuClair.css" type="text/css" rel="stylesheet">
+</head>
+<!--Ce fichier a été généré automatiquement par PowerDesigner.-->
+<body>
+<h2>
+<a name="18">Référence consulté par</a> 
+</h2>
+<h3>
+<a name="19">Fiche de la référence consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp24.htm#18">consulté par</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp24.htm#18">CONSULTE_PAR</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table parent
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp9.htm#79">Client</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table enfant
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#167">consulté par</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="20">Aperçu du code de la référence consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">if exists(select 1 from sys.sysforeignkey where role='FK_CONSULTE_CONSULTE__CLIENT') then<br />
+    alter table CONSULTE_PAR<br />
+       delete foreign key FK_CONSULTE_CONSULTE__CLIENT<br />
+end if;<br />
+<br />
+alter table CONSULTE_PAR<br />
+   add constraint FK_CONSULTE_CONSULTE__CLIENT foreign key (CLI_ID_PERSONNE, ID_CLIENT)<br />
+      references CLIENT (ID_PERSONNE, ID_CLIENT)<br />
+      on update restrict<br />
+      on delete restrict;<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="21">Liste des diagrammes contenant la référence consulté par</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp1.htm#5">sparadrap</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp1.htm#5">SPARADRAP</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="22">Liste des jointures de référence de la référence consulté par</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Colonne de la table parent
+</p>
+</td>
+<td class="Header">
+<p align="center">Colonne de la table enfant
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp9.htm#90">Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#177">Cli_Id Personne</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp9.htm#97">id Client</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#184">id Client</a>
+</p>
+</td>
+</tr>
+</table><br />
+<hr />
+<table><tr>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp23.htm">Précédent</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Accueil_BleuClair.html">Accueil</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp25.htm">Suivant</a></td></tr></table></td></tr></table>
+<br />
+<br />
+</body>
+</html>

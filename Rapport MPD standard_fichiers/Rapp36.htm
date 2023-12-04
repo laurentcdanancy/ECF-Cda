@@ -1,0 +1,146 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Rapport de listes MPD
+</title>
+<link href="Theme_BleuClair.css" type="text/css" rel="stylesheet">
+</head>
+<!--Ce fichier a été généré automatiquement par PowerDesigner.-->
+<body>
+<h2>
+<a name="76">Référence Prescrit Medicament</a> 
+</h2>
+<h3>
+<a name="77">Fiche de la référence Prescrit Medicament</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp36.htm#76">Prescrit Medicament</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp36.htm#76">PRESCRIT_MEDICAMENT3</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table parent
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp20.htm#754">Specialiste</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table enfant
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp19.htm#682">Prescrit Medicament</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="78">Aperçu du code de la référence Prescrit Medicament</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">if exists(select 1 from sys.sysforeignkey where role='FK_PRESCRIT_PRESCRIT__SPECIALI') then<br />
+    alter table PRESCRIT_MEDICAMENT<br />
+       delete foreign key FK_PRESCRIT_PRESCRIT__SPECIALI<br />
+end if;<br />
+<br />
+alter table PRESCRIT_MEDICAMENT<br />
+   add constraint FK_PRESCRIT_PRESCRIT__SPECIALI foreign key (ID_PERSONNE, ID_SPECIALISTE)<br />
+      references SPECIALISTE (ID_PERSONNE, ID_SPECIALISTE)<br />
+      on update restrict<br />
+      on delete restrict;<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="79">Liste des diagrammes contenant la référence Prescrit Medicament</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp1.htm#5">sparadrap</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp1.htm#5">SPARADRAP</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="80">Liste des jointures de référence de la référence Prescrit Medicament</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Colonne de la table parent
+</p>
+</td>
+<td class="Header">
+<p align="center">Colonne de la table enfant
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp20.htm#765">Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp19.htm#713">Id Personne</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp20.htm#772">id Specialiste</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp19.htm#720">id Specialiste</a>
+</p>
+</td>
+</tr>
+</table><br />
+<hr />
+<table><tr>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp35.htm">Précédent</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Accueil_BleuClair.html">Accueil</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp37.htm">Suivant</a></td></tr></table></td></tr></table>
+<br />
+<br />
+</body>
+</html>

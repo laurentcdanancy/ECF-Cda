@@ -1,0 +1,1327 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Rapport de listes MPD
+</title>
+<link href="Theme_BleuClair.css" type="text/css" rel="stylesheet">
+</head>
+<!--Ce fichier a été généré automatiquement par PowerDesigner.-->
+<body>
+<h2>
+<a name="606">Table Ordonnace</a> 
+</h2>
+<h3>
+<a name="607">Fiche de la table Ordonnace</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#606">Ordonnace</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#606">ORDONNACE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">SGBD
+</p>
+</td>
+<td width="75%">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="608">Nom de contrainte de paramètre de contrôle de la table Ordonnace</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKT_ORDONNACE
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="609">Règle de validation serveur de la table Ordonnace</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="610">Aperçu du code de la table Ordonnace</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists ORDONNACE.ORDONNACE_PK;<br />
+<br />
+drop table if exists ORDONNACE;<br />
+<br />
+/*==============================================================*/<br />
+/* Table : ORDONNACE                                            */<br />
+/*==============================================================*/<br />
+create table ORDONNACE <br />
+(<br />
+   ID_ORDONNANCE        numeric                        not null,<br />
+   &quot;DATE&quot;               date                           not null,<br />
+   constraint PK_ORDONNACE primary key clustered (ID_ORDONNANCE)<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ORDONNACE_PK                                         */<br />
+/*==============================================================*/<br />
+create unique clustered index ORDONNACE_PK on ORDONNACE (<br />
+ID_ORDONNANCE ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="611">Liste des diagrammes contenant la table Ordonnace</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp1.htm#5">sparadrap</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp1.htm#5">SPARADRAP</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="612">Liste des références entrantes de la table Ordonnace</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp23.htm#13">Acheter</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp23.htm#13">ACHETER2</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp37.htm#81">Prescrit Medicament</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp37.htm#81">PRESCRIT_MEDICAMENT</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="613">Liste de tous les objets dépendant de la table Ordonnace</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp23.htm#13">Acheter</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp23.htm#13">ACHETER2</a>
+</p>
+</td>
+<td>
+<p align="left">Référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp37.htm#81">Prescrit Medicament</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp37.htm#81">PRESCRIT_MEDICAMENT</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Référence
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="614">Liste des attributs étendus de la table Ordonnace</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">At
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DbspaceIn
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Encrypted
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">PctFree
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Entier)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TemporaryTable
+</p>
+</td>
+<td>
+<p align="left">(Chaîne)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="615">Liste des colonnes de la table Ordonnace</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp17.htm#616">id ordonnance</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp17.htm#616">ID_ORDONNANCE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp17.htm#623">Date</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp17.htm#623">DATE</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="616">Colonne id ordonnance de la table Ordonnace</a> 
+</h2>
+<h3>
+<a name="617">Fiche de la colonne id ordonnance de la table Ordonnace</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#616">id ordonnance</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#616">ID_ORDONNANCE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">numeric
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="618">Nom de contrainte de paramètre de contrôle de la colonne id ordonnance de la table Ordonnace</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_ORDONNANCE_ORDONNAC
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="619">Contrôles standard de la colonne id ordonnance de la table Ordonnace</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="620">Règle de validation serveur de la colonne id ordonnance de la table Ordonnace</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="621">Liste de tous les objets dépendant de la colonne de table id ordonnance</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">id ordonnance
+</p>
+</td>
+<td>
+<p align="left">ID_ORDONNANCE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td class="TD2">
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td class="TD2">
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp17.htm#630">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp17.htm#630">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="622">Liste des attributs étendus de la colonne de table id ordonnance</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="623">Colonne Date de la table Ordonnace</a> 
+</h2>
+<h3>
+<a name="624">Fiche de la colonne Date de la table Ordonnace</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#623">Date</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#623">DATE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">date
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="625">Nom de contrainte de paramètre de contrôle de la colonne Date de la table Ordonnace</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_DATE_ORDONNAC
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="626">Contrôles standard de la colonne Date de la table Ordonnace</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="627">Règle de validation serveur de la colonne Date de la table Ordonnace</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="628">Liste des attributs étendus de la colonne de table Date</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="629">Liste des clés de la table Ordonnace</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Primaire
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp17.htm#630">Identifiant_1</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp17.htm#630">IDENTIFIANT_1</a>
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="630">Clé Identifiant_1 de la table Ordonnace</a> 
+</h2>
+<h3>
+<a name="631">Fiche de la clé Identifiant_1 de la table Ordonnace</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#630">Identifiant_1</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#630">IDENTIFIANT_1</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#606">Ordonnace</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="632">Aperçu du code de la clé Identifiant_1 de la table Ordonnace</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">if exists(<br />
+   select 1 from sys.sysconstraint k<br />
+      join sys.systab t on (t.object_id = k.table_object_id and t.table_name='ORDONNACE')<br />
+   where<br />
+      k.constraint_type = 'P'<br />
+) then<br />
+    alter table ORDONNACE<br />
+   delete primary key<br />
+end if;<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="633">Liste des colonnes de la clé de table Identifiant_1</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp17.htm#616">id ordonnance</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp17.htm#616">ID_ORDONNANCE</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="634">Liste de tous les objets dépendant de la clé de table Identifiant_1</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp23.htm#13">Acheter</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp23.htm#13">ACHETER2</a>
+</p>
+</td>
+<td>
+<p align="left">Référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp17.htm#636">ORDONNACE_PK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp17.htm#636">ORDONNACE_PK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp37.htm#81">Prescrit Medicament</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp37.htm#81">PRESCRIT_MEDICAMENT</a>
+</p>
+</td>
+<td>
+<p align="left">Référence
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="635">Liste des index de la table Ordonnace</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Unique
+</p>
+</td>
+<td class="Header">
+<p align="center">Cluster
+</p>
+</td>
+<td class="Header">
+<p align="center">Primaire
+</p>
+</td>
+<td class="Header">
+<p align="center">Clé étrangère
+</p>
+</td>
+<td class="Header">
+<p align="center">Clé alternative
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp17.htm#636">ORDONNACE_PK</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp17.htm#636">ORDONNACE_PK</a>
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="636">Index ORDONNACE_PK de la table Ordonnace</a> 
+</h2>
+<h3>
+<a name="637">Fiche de l'index ORDONNACE_PK de la table Ordonnace</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#636">ORDONNACE_PK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#636">ORDONNACE_PK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp17.htm#606">Ordonnace</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="638">Aperçu du code de l'index ORDONNACE_PK de la table Ordonnace</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists ORDONNACE.ORDONNACE_PK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ORDONNACE_PK                                         */<br />
+/*==============================================================*/<br />
+create unique clustered index ORDONNACE_PK on ORDONNACE (<br />
+ID_ORDONNANCE ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="639">Liste des colonnes d'index de l'index de table ORDONNACE_PK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">id ordonnance
+</p>
+</td>
+<td>
+<p align="left">ID_ORDONNANCE
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="640">Liste des attributs étendus de l'index de table ORDONNACE_PK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<hr />
+<table><tr>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp16.htm">Précédent</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Accueil_BleuClair.html">Accueil</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp18.htm">Suivant</a></td></tr></table></td></tr></table>
+<br />
+<br />
+</body>
+</html>

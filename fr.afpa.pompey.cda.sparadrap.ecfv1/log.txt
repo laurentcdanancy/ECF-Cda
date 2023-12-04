@@ -1,0 +1,2 @@
+déc. 04, 2023 3:11:28 AM pages.Logger_Test_SurClass main
+INFO: Ceci est un message de journalisation.

@@ -1,0 +1,3626 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Rapport de listes MPD
+</title>
+<link href="Theme_BleuClair.css" type="text/css" rel="stylesheet">
+</head>
+<!--Ce fichier a été généré automatiquement par PowerDesigner.-->
+<body>
+<h2>
+<a name="167">Table consulté par</a> 
+</h2>
+<h3>
+<a name="168">Fiche de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#167">consulté par</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#167">CONSULTE_PAR</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">SGBD
+</p>
+</td>
+<td width="75%">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="169">Nom de contrainte de paramètre de contrôle de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKT_CONSULTE_PAR
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="170">Règle de validation serveur de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="171">Aperçu du code de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">if exists(select 1 from sys.sysforeignkey where role='FK_CONSULTE_CONSULTE__CLIENT') then<br />
+    alter table CONSULTE_PAR<br />
+       delete foreign key FK_CONSULTE_CONSULTE__CLIENT<br />
+end if;<br />
+<br />
+if exists(select 1 from sys.sysforeignkey where role='FK_CONSULTE_CONSULTE__MEDECIN') then<br />
+    alter table CONSULTE_PAR<br />
+       delete foreign key FK_CONSULTE_CONSULTE__MEDECIN<br />
+end if;<br />
+<br />
+if exists(select 1 from sys.sysforeignkey where role='FK_CONSULTE_CONSULTE__SPECIALI') then<br />
+    alter table CONSULTE_PAR<br />
+       delete foreign key FK_CONSULTE_CONSULTE__SPECIALI<br />
+end if;<br />
+<br />
+drop index if exists CONSULTE_PAR.CONSULTE_PAR3_FK;<br />
+<br />
+drop index if exists CONSULTE_PAR.CONSULTE_PAR2_FK;<br />
+<br />
+drop index if exists CONSULTE_PAR.CONSULTE_PAR_FK;<br />
+<br />
+drop index if exists CONSULTE_PAR.CONSULTE_PAR_PK;<br />
+<br />
+drop table if exists CONSULTE_PAR;<br />
+<br />
+/*==============================================================*/<br />
+/* Table : CONSULTE_PAR                                         */<br />
+/*==============================================================*/<br />
+create table CONSULTE_PAR <br />
+(<br />
+   CLI_ID_PERSONNE      integer                        not null,<br />
+   ID_CLIENT            integer                        not null,<br />
+   MED_ID_PERSONNE      integer                        not null,<br />
+   ID_MEDECIN           char(10)                       not null,<br />
+   ID_PERSONNE          integer                        not null,<br />
+   ID_SPECIALISTE       integer                        not null,<br />
+   constraint PK_CONSULTE_PAR primary key clustered (CLI_ID_PERSONNE, ID_CLIENT, MED_ID_PERSONNE, ID_MEDECIN, ID_PERSONNE, ID_SPECIALISTE)<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : CONSULTE_PAR_PK                                      */<br />
+/*==============================================================*/<br />
+create unique clustered index CONSULTE_PAR_PK on CONSULTE_PAR (<br />
+CLI_ID_PERSONNE ASC,<br />
+ID_CLIENT ASC,<br />
+MED_ID_PERSONNE ASC,<br />
+ID_MEDECIN ASC,<br />
+ID_PERSONNE ASC,<br />
+ID_SPECIALISTE ASC<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : CONSULTE_PAR_FK                                      */<br />
+/*==============================================================*/<br />
+create index CONSULTE_PAR_FK on CONSULTE_PAR (<br />
+CLI_ID_PERSONNE ASC,<br />
+ID_CLIENT ASC<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : CONSULTE_PAR2_FK                                     */<br />
+/*==============================================================*/<br />
+create index CONSULTE_PAR2_FK on CONSULTE_PAR (<br />
+MED_ID_PERSONNE ASC,<br />
+ID_MEDECIN ASC<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : CONSULTE_PAR3_FK                                     */<br />
+/*==============================================================*/<br />
+create index CONSULTE_PAR3_FK on CONSULTE_PAR (<br />
+ID_PERSONNE ASC,<br />
+ID_SPECIALISTE ASC<br />
+);<br />
+<br />
+alter table CONSULTE_PAR<br />
+   add constraint FK_CONSULTE_CONSULTE__CLIENT foreign key (CLI_ID_PERSONNE, ID_CLIENT)<br />
+      references CLIENT (ID_PERSONNE, ID_CLIENT)<br />
+      on update restrict<br />
+      on delete restrict;<br />
+<br />
+alter table CONSULTE_PAR<br />
+   add constraint FK_CONSULTE_CONSULTE__MEDECIN foreign key (MED_ID_PERSONNE, ID_MEDECIN)<br />
+      references MEDECIN (ID_PERSONNE, ID_MEDECIN)<br />
+      on update restrict<br />
+      on delete restrict;<br />
+<br />
+alter table CONSULTE_PAR<br />
+   add constraint FK_CONSULTE_CONSULTE__SPECIALI foreign key (ID_PERSONNE, ID_SPECIALISTE)<br />
+      references SPECIALISTE (ID_PERSONNE, ID_SPECIALISTE)<br />
+      on update restrict<br />
+      on delete restrict;<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="172">Liste des diagrammes contenant la table consulté par</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp1.htm#5">sparadrap</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp1.htm#5">SPARADRAP</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="173">Liste des références sortantes de la table consulté par</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Colonnes de clé étrangère
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp25.htm#23">consulté par</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp25.htm#23">CONSULTE_PAR3</a>
+</p>
+</td>
+<td>
+<p align="left">Id Personne; id Specialiste
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp26.htm#28">consulté par</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp26.htm#28">CONSULTE_PAR2</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Med_Id Personne; id Medecin
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp24.htm#18">consulté par</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp24.htm#18">CONSULTE_PAR</a>
+</p>
+</td>
+<td>
+<p align="left">Cli_Id Personne; id Client
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="174">Liste de tous les objets dépendant de la table consulté par</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp25.htm#23">consulté par</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp25.htm#23">CONSULTE_PAR3</a>
+</p>
+</td>
+<td>
+<p align="left">Référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp26.htm#28">consulté par</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp26.htm#28">CONSULTE_PAR2</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Référence
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp24.htm#18">consulté par</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp24.htm#18">CONSULTE_PAR</a>
+</p>
+</td>
+<td>
+<p align="left">Référence
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="175">Liste des attributs étendus de la table consulté par</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">At
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DbspaceIn
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Encrypted
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">PctFree
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Entier)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TemporaryTable
+</p>
+</td>
+<td>
+<p align="left">(Chaîne)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="176">Liste des colonnes de la table consulté par</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp10.htm#177">Cli_Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#177">CLI_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#184">id Client</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#184">ID_CLIENT</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp10.htm#191">Med_Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#191">MED_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#198">id Medecin</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#198">ID_MEDECIN</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp10.htm#205">Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#205">ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#212">id Specialiste</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#212">ID_SPECIALISTE</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="177">Colonne Cli_Id Personne de la table consulté par</a> 
+</h2>
+<h3>
+<a name="178">Fiche de la colonne Cli_Id Personne de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#177">Cli_Id Personne</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#177">CLI_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="179">Nom de contrainte de paramètre de contrôle de la colonne Cli_Id Personne de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_CLI_ID_PERSONNE_CONSULTE
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="180">Contrôles standard de la colonne Cli_Id Personne de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="181">Règle de validation serveur de la colonne Cli_Id Personne de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="182">Liste de tous les objets dépendant de la colonne de table Cli_Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Cli_Id Personne
+</p>
+</td>
+<td>
+<p align="left">CLI_ID_PERSONNE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Cli_Id Personne
+</p>
+</td>
+<td class="TD2">
+<p align="left">CLI_ID_PERSONNE
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="183">Liste des attributs étendus de la colonne de table Cli_Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="184">Colonne id Client de la table consulté par</a> 
+</h2>
+<h3>
+<a name="185">Fiche de la colonne id Client de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#184">id Client</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#184">ID_CLIENT</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="186">Nom de contrainte de paramètre de contrôle de la colonne id Client de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_CLIENT_CONSULTE
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="187">Contrôles standard de la colonne id Client de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="188">Règle de validation serveur de la colonne id Client de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="189">Liste de tous les objets dépendant de la colonne de table id Client</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">id Client
+</p>
+</td>
+<td>
+<p align="left">ID_CLIENT
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Client
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_CLIENT
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="190">Liste des attributs étendus de la colonne de table id Client</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="191">Colonne Med_Id Personne de la table consulté par</a> 
+</h2>
+<h3>
+<a name="192">Fiche de la colonne Med_Id Personne de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#191">Med_Id Personne</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#191">MED_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="193">Nom de contrainte de paramètre de contrôle de la colonne Med_Id Personne de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_MED_ID_PERSONNE_CONSULTE
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="194">Contrôles standard de la colonne Med_Id Personne de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="195">Règle de validation serveur de la colonne Med_Id Personne de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="196">Liste de tous les objets dépendant de la colonne de table Med_Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Med_Id Personne
+</p>
+</td>
+<td>
+<p align="left">MED_ID_PERSONNE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Med_Id Personne
+</p>
+</td>
+<td class="TD2">
+<p align="left">MED_ID_PERSONNE
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="197">Liste des attributs étendus de la colonne de table Med_Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="198">Colonne id Medecin de la table consulté par</a> 
+</h2>
+<h3>
+<a name="199">Fiche de la colonne id Medecin de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#198">id Medecin</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#198">ID_MEDECIN</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">&lt;Non défini&gt;
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="200">Nom de contrainte de paramètre de contrôle de la colonne id Medecin de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_MEDECIN_CONSULTE
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="201">Contrôles standard de la colonne id Medecin de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="202">Règle de validation serveur de la colonne id Medecin de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="203">Liste de tous les objets dépendant de la colonne de table id Medecin</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">id Medecin
+</p>
+</td>
+<td>
+<p align="left">ID_MEDECIN
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Medecin
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_MEDECIN
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="204">Liste des attributs étendus de la colonne de table id Medecin</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="205">Colonne Id Personne de la table consulté par</a> 
+</h2>
+<h3>
+<a name="206">Fiche de la colonne Id Personne de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#205">Id Personne</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#205">ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="207">Nom de contrainte de paramètre de contrôle de la colonne Id Personne de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_PERSONNE_CONSULTE
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="208">Contrôles standard de la colonne Id Personne de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="209">Règle de validation serveur de la colonne Id Personne de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="210">Liste de tous les objets dépendant de la colonne de table Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Id Personne
+</p>
+</td>
+<td>
+<p align="left">ID_PERSONNE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Id Personne
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_PERSONNE
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="211">Liste des attributs étendus de la colonne de table Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="212">Colonne id Specialiste de la table consulté par</a> 
+</h2>
+<h3>
+<a name="213">Fiche de la colonne id Specialiste de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#212">id Specialiste</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#212">ID_SPECIALISTE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="214">Nom de contrainte de paramètre de contrôle de la colonne id Specialiste de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_SPECIALISTE_CONSULTE
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="215">Contrôles standard de la colonne id Specialiste de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="216">Règle de validation serveur de la colonne id Specialiste de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="217">Liste de tous les objets dépendant de la colonne de table id Specialiste</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">id Specialiste
+</p>
+</td>
+<td>
+<p align="left">ID_SPECIALISTE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Specialiste
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_SPECIALISTE
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#220">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="218">Liste des attributs étendus de la colonne de table id Specialiste</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="219">Liste des clés de la table consulté par</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Primaire
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp10.htm#220">Identifiant_1</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#220">IDENTIFIANT_1</a>
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="220">Clé Identifiant_1 de la table consulté par</a> 
+</h2>
+<h3>
+<a name="221">Fiche de la clé Identifiant_1 de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#220">Identifiant_1</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#220">IDENTIFIANT_1</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#167">consulté par</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="222">Aperçu du code de la clé Identifiant_1 de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">if exists(<br />
+   select 1 from sys.sysconstraint k<br />
+      join sys.systab t on (t.object_id = k.table_object_id and t.table_name='CONSULTE_PAR')<br />
+   where<br />
+      k.constraint_type = 'P'<br />
+) then<br />
+    alter table CONSULTE_PAR<br />
+   delete primary key<br />
+end if;<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="223">Liste des colonnes de la clé de table Identifiant_1</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp10.htm#177">Cli_Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#177">CLI_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#184">id Client</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#184">ID_CLIENT</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp10.htm#191">Med_Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#191">MED_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#198">id Medecin</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#198">ID_MEDECIN</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp10.htm#205">Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#205">ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#212">id Specialiste</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#212">ID_SPECIALISTE</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="224">Liste de tous les objets dépendant de la clé de table Identifiant_1</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp10.htm#226">CONSULTE_PAR_PK</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#226">CONSULTE_PAR_PK</a>
+</p>
+</td>
+<td>
+<p align="left">Index
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="225">Liste des index de la table consulté par</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Unique
+</p>
+</td>
+<td class="Header">
+<p align="center">Cluster
+</p>
+</td>
+<td class="Header">
+<p align="center">Primaire
+</p>
+</td>
+<td class="Header">
+<p align="center">Clé étrangère
+</p>
+</td>
+<td class="Header">
+<p align="center">Clé alternative
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp10.htm#226">CONSULTE_PAR_PK</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#226">CONSULTE_PAR_PK</a>
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#231">CONSULTE_PAR_FK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#231">CONSULTE_PAR_FK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">X
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp10.htm#236">CONSULTE_PAR2_FK</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp10.htm#236">CONSULTE_PAR2_FK</a>
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#241">CONSULTE_PAR3_FK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp10.htm#241">CONSULTE_PAR3_FK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">X
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="226">Index CONSULTE_PAR_PK de la table consulté par</a> 
+</h2>
+<h3>
+<a name="227">Fiche de l'index CONSULTE_PAR_PK de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#226">CONSULTE_PAR_PK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#226">CONSULTE_PAR_PK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#167">consulté par</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="228">Aperçu du code de l'index CONSULTE_PAR_PK de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists CONSULTE_PAR.CONSULTE_PAR_PK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : CONSULTE_PAR_PK                                      */<br />
+/*==============================================================*/<br />
+create unique clustered index CONSULTE_PAR_PK on CONSULTE_PAR (<br />
+CLI_ID_PERSONNE ASC,<br />
+ID_CLIENT ASC,<br />
+MED_ID_PERSONNE ASC,<br />
+ID_MEDECIN ASC,<br />
+ID_PERSONNE ASC,<br />
+ID_SPECIALISTE ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="229">Liste des colonnes d'index de l'index de table CONSULTE_PAR_PK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Cli_Id Personne
+</p>
+</td>
+<td>
+<p align="left">CLI_ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Client
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_CLIENT
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Med_Id Personne
+</p>
+</td>
+<td>
+<p align="left">MED_ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Medecin
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_MEDECIN
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Id Personne
+</p>
+</td>
+<td>
+<p align="left">ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Specialiste
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_SPECIALISTE
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="230">Liste des attributs étendus de l'index de table CONSULTE_PAR_PK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="231">Index CONSULTE_PAR_FK de la table consulté par</a> 
+</h2>
+<h3>
+<a name="232">Fiche de l'index CONSULTE_PAR_FK de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#231">CONSULTE_PAR_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#231">CONSULTE_PAR_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#167">consulté par</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="233">Aperçu du code de l'index CONSULTE_PAR_FK de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists CONSULTE_PAR.CONSULTE_PAR_FK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : CONSULTE_PAR_FK                                      */<br />
+/*==============================================================*/<br />
+create index CONSULTE_PAR_FK on CONSULTE_PAR (<br />
+CLI_ID_PERSONNE ASC,<br />
+ID_CLIENT ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="234">Liste des colonnes d'index de l'index de table CONSULTE_PAR_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Cli_Id Personne
+</p>
+</td>
+<td>
+<p align="left">CLI_ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Client
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_CLIENT
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="235">Liste des attributs étendus de l'index de table CONSULTE_PAR_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="236">Index CONSULTE_PAR2_FK de la table consulté par</a> 
+</h2>
+<h3>
+<a name="237">Fiche de l'index CONSULTE_PAR2_FK de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#236">CONSULTE_PAR2_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#236">CONSULTE_PAR2_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#167">consulté par</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="238">Aperçu du code de l'index CONSULTE_PAR2_FK de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists CONSULTE_PAR.CONSULTE_PAR2_FK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : CONSULTE_PAR2_FK                                     */<br />
+/*==============================================================*/<br />
+create index CONSULTE_PAR2_FK on CONSULTE_PAR (<br />
+MED_ID_PERSONNE ASC,<br />
+ID_MEDECIN ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="239">Liste des colonnes d'index de l'index de table CONSULTE_PAR2_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Med_Id Personne
+</p>
+</td>
+<td>
+<p align="left">MED_ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Medecin
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_MEDECIN
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="240">Liste des attributs étendus de l'index de table CONSULTE_PAR2_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="241">Index CONSULTE_PAR3_FK de la table consulté par</a> 
+</h2>
+<h3>
+<a name="242">Fiche de l'index CONSULTE_PAR3_FK de la table consulté par</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#241">CONSULTE_PAR3_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#241">CONSULTE_PAR3_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp10.htm#167">consulté par</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="243">Aperçu du code de l'index CONSULTE_PAR3_FK de la table consulté par</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists CONSULTE_PAR.CONSULTE_PAR3_FK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : CONSULTE_PAR3_FK                                     */<br />
+/*==============================================================*/<br />
+create index CONSULTE_PAR3_FK on CONSULTE_PAR (<br />
+ID_PERSONNE ASC,<br />
+ID_SPECIALISTE ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="244">Liste des colonnes d'index de l'index de table CONSULTE_PAR3_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Id Personne
+</p>
+</td>
+<td>
+<p align="left">ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Specialiste
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_SPECIALISTE
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="245">Liste des attributs étendus de l'index de table CONSULTE_PAR3_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<hr />
+<table><tr>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp9.htm">Précédent</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Accueil_BleuClair.html">Accueil</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp11.htm">Suivant</a></td></tr></table></td></tr></table>
+<br />
+<br />
+</body>
+</html>

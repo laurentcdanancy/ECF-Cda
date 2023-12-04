@@ -1,0 +1,4270 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Rapport de listes MPD
+</title>
+<link href="Theme_BleuClair.css" type="text/css" rel="stylesheet">
+</head>
+<!--Ce fichier a été généré automatiquement par PowerDesigner.-->
+<body>
+<h2>
+<a name="368">Table etre joignable</a> 
+</h2>
+<h3>
+<a name="369">Fiche de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#368">etre joignable</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#368">ETRE_JOIGNABLE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">SGBD
+</p>
+</td>
+<td width="75%">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="370">Nom de contrainte de paramètre de contrôle de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKT_ETRE_JOIGNABLE
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="371">Règle de validation serveur de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="372">Aperçu du code de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">if exists(select 1 from sys.sysforeignkey where role='FK_ETRE_JOI_ETRE_JOIG_CLIENT') then<br />
+    alter table ETRE_JOIGNABLE<br />
+       delete foreign key FK_ETRE_JOI_ETRE_JOIG_CLIENT<br />
+end if;<br />
+<br />
+if exists(select 1 from sys.sysforeignkey where role='FK_ETRE_JOI_ETRE_JOIG_MEDECIN') then<br />
+    alter table ETRE_JOIGNABLE<br />
+       delete foreign key FK_ETRE_JOI_ETRE_JOIG_MEDECIN<br />
+end if;<br />
+<br />
+if exists(select 1 from sys.sysforeignkey where role='FK_ETRE_JOI_ETRE_JOIG_SPECIALI') then<br />
+    alter table ETRE_JOIGNABLE<br />
+       delete foreign key FK_ETRE_JOI_ETRE_JOIG_SPECIALI<br />
+end if;<br />
+<br />
+if exists(select 1 from sys.sysforeignkey where role='FK_ETRE_JOI_ETRE_JOIG_COORDONN') then<br />
+    alter table ETRE_JOIGNABLE<br />
+       delete foreign key FK_ETRE_JOI_ETRE_JOIG_COORDONN<br />
+end if;<br />
+<br />
+drop index if exists ETRE_JOIGNABLE.ETRE_JOIGNABLE4_FK;<br />
+<br />
+drop index if exists ETRE_JOIGNABLE.ETRE_JOIGNABLE3_FK;<br />
+<br />
+drop index if exists ETRE_JOIGNABLE.ETRE_JOIGNABLE2_FK;<br />
+<br />
+drop index if exists ETRE_JOIGNABLE.ETRE_JOIGNABLE_FK;<br />
+<br />
+drop index if exists ETRE_JOIGNABLE.ETRE_JOIGNABLE_PK;<br />
+<br />
+drop table if exists ETRE_JOIGNABLE;<br />
+<br />
+/*==============================================================*/<br />
+/* Table : ETRE_JOIGNABLE                                       */<br />
+/*==============================================================*/<br />
+create table ETRE_JOIGNABLE <br />
+(<br />
+   CLI_ID_PERSONNE      integer                        not null,<br />
+   ID_CLIENT            integer                        not null,<br />
+   MED_ID_PERSONNE      integer                        not null,<br />
+   ID_MEDECIN           char(10)                       not null,<br />
+   ID_PERSONNE          integer                        not null,<br />
+   ID_SPECIALISTE       integer                        not null,<br />
+   ID_COORDONNE         integer                        not null,<br />
+   constraint PK_ETRE_JOIGNABLE primary key clustered (CLI_ID_PERSONNE, ID_CLIENT, MED_ID_PERSONNE, ID_MEDECIN, ID_PERSONNE, ID_SPECIALISTE, ID_COORDONNE)<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ETRE_JOIGNABLE_PK                                    */<br />
+/*==============================================================*/<br />
+create unique clustered index ETRE_JOIGNABLE_PK on ETRE_JOIGNABLE (<br />
+CLI_ID_PERSONNE ASC,<br />
+ID_CLIENT ASC,<br />
+MED_ID_PERSONNE ASC,<br />
+ID_MEDECIN ASC,<br />
+ID_PERSONNE ASC,<br />
+ID_SPECIALISTE ASC,<br />
+ID_COORDONNE ASC<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ETRE_JOIGNABLE_FK                                    */<br />
+/*==============================================================*/<br />
+create index ETRE_JOIGNABLE_FK on ETRE_JOIGNABLE (<br />
+CLI_ID_PERSONNE ASC,<br />
+ID_CLIENT ASC<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ETRE_JOIGNABLE2_FK                                   */<br />
+/*==============================================================*/<br />
+create index ETRE_JOIGNABLE2_FK on ETRE_JOIGNABLE (<br />
+MED_ID_PERSONNE ASC,<br />
+ID_MEDECIN ASC<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ETRE_JOIGNABLE3_FK                                   */<br />
+/*==============================================================*/<br />
+create index ETRE_JOIGNABLE3_FK on ETRE_JOIGNABLE (<br />
+ID_PERSONNE ASC,<br />
+ID_SPECIALISTE ASC<br />
+);<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ETRE_JOIGNABLE4_FK                                   */<br />
+/*==============================================================*/<br />
+create index ETRE_JOIGNABLE4_FK on ETRE_JOIGNABLE (<br />
+ID_COORDONNE ASC<br />
+);<br />
+<br />
+alter table ETRE_JOIGNABLE<br />
+   add constraint FK_ETRE_JOI_ETRE_JOIG_CLIENT foreign key (CLI_ID_PERSONNE, ID_CLIENT)<br />
+      references CLIENT (ID_PERSONNE, ID_CLIENT)<br />
+      on update restrict<br />
+      on delete restrict;<br />
+<br />
+alter table ETRE_JOIGNABLE<br />
+   add constraint FK_ETRE_JOI_ETRE_JOIG_MEDECIN foreign key (MED_ID_PERSONNE, ID_MEDECIN)<br />
+      references MEDECIN (ID_PERSONNE, ID_MEDECIN)<br />
+      on update restrict<br />
+      on delete restrict;<br />
+<br />
+alter table ETRE_JOIGNABLE<br />
+   add constraint FK_ETRE_JOI_ETRE_JOIG_SPECIALI foreign key (ID_PERSONNE, ID_SPECIALISTE)<br />
+      references SPECIALISTE (ID_PERSONNE, ID_SPECIALISTE)<br />
+      on update restrict<br />
+      on delete restrict;<br />
+<br />
+alter table ETRE_JOIGNABLE<br />
+   add constraint FK_ETRE_JOI_ETRE_JOIG_COORDONN foreign key (ID_COORDONNE)<br />
+      references COORDONNEE (ID_COORDONNE)<br />
+      on update restrict<br />
+      on delete restrict;<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="373">Liste des diagrammes contenant la table etre joignable</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp1.htm#5">sparadrap</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp1.htm#5">SPARADRAP</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="374">Liste des références sortantes de la table etre joignable</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Colonnes de clé étrangère
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp29.htm#42">etre joignable</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp29.htm#42">ETRE_JOIGNABLE3</a>
+</p>
+</td>
+<td>
+<p align="left">Id Personne; id Specialiste
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp30.htm#47">etre joignable</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp30.htm#47">ETRE_JOIGNABLE2</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Med_Id Personne; id Medecin
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp28.htm#37">etre joignable</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp28.htm#37">ETRE_JOIGNABLE</a>
+</p>
+</td>
+<td>
+<p align="left">Cli_Id Personne; id Client
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp31.htm#52">etre joignable</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp31.htm#52">ETRE_JOIGNABLE4</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Id Coordonne
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="375">Liste de tous les objets dépendant de la table etre joignable</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp29.htm#42">etre joignable</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp29.htm#42">ETRE_JOIGNABLE3</a>
+</p>
+</td>
+<td>
+<p align="left">Référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp30.htm#47">etre joignable</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp30.htm#47">ETRE_JOIGNABLE2</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Référence
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp28.htm#37">etre joignable</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp28.htm#37">ETRE_JOIGNABLE</a>
+</p>
+</td>
+<td>
+<p align="left">Référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp31.htm#52">etre joignable</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp31.htm#52">ETRE_JOIGNABLE4</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Référence
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="376">Liste des attributs étendus de la table etre joignable</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">At
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DbspaceIn
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Encrypted
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">PctFree
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Entier)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TemporaryTable
+</p>
+</td>
+<td>
+<p align="left">(Chaîne)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="377">Liste des colonnes de la table etre joignable</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#378">Cli_Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#378">CLI_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#385">id Client</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#385">ID_CLIENT</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#392">Med_Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#392">MED_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#399">id Medecin</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#399">ID_MEDECIN</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#406">Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#406">ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#413">id Specialiste</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#413">ID_SPECIALISTE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#420">Id Coordonne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#420">ID_COORDONNE</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="378">Colonne Cli_Id Personne de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="379">Fiche de la colonne Cli_Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#378">Cli_Id Personne</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#378">CLI_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="380">Nom de contrainte de paramètre de contrôle de la colonne Cli_Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_CLI_ID_PERSONNE_ETRE_JOI
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="381">Contrôles standard de la colonne Cli_Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="382">Règle de validation serveur de la colonne Cli_Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="383">Liste de tous les objets dépendant de la colonne de table Cli_Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Cli_Id Personne
+</p>
+</td>
+<td>
+<p align="left">CLI_ID_PERSONNE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Cli_Id Personne
+</p>
+</td>
+<td class="TD2">
+<p align="left">CLI_ID_PERSONNE
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="384">Liste des attributs étendus de la colonne de table Cli_Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="385">Colonne id Client de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="386">Fiche de la colonne id Client de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#385">id Client</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#385">ID_CLIENT</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="387">Nom de contrainte de paramètre de contrôle de la colonne id Client de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_CLIENT_ETRE_JOI
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="388">Contrôles standard de la colonne id Client de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="389">Règle de validation serveur de la colonne id Client de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="390">Liste de tous les objets dépendant de la colonne de table id Client</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">id Client
+</p>
+</td>
+<td>
+<p align="left">ID_CLIENT
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Client
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_CLIENT
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="391">Liste des attributs étendus de la colonne de table id Client</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="392">Colonne Med_Id Personne de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="393">Fiche de la colonne Med_Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#392">Med_Id Personne</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#392">MED_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="394">Nom de contrainte de paramètre de contrôle de la colonne Med_Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_MED_ID_PERSONNE_ETRE_JOI
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="395">Contrôles standard de la colonne Med_Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="396">Règle de validation serveur de la colonne Med_Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="397">Liste de tous les objets dépendant de la colonne de table Med_Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Med_Id Personne
+</p>
+</td>
+<td>
+<p align="left">MED_ID_PERSONNE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Med_Id Personne
+</p>
+</td>
+<td class="TD2">
+<p align="left">MED_ID_PERSONNE
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="398">Liste des attributs étendus de la colonne de table Med_Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="399">Colonne id Medecin de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="400">Fiche de la colonne id Medecin de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#399">id Medecin</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#399">ID_MEDECIN</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">&lt;Non défini&gt;
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="401">Nom de contrainte de paramètre de contrôle de la colonne id Medecin de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_MEDECIN_ETRE_JOI
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="402">Contrôles standard de la colonne id Medecin de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="403">Règle de validation serveur de la colonne id Medecin de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="404">Liste de tous les objets dépendant de la colonne de table id Medecin</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">id Medecin
+</p>
+</td>
+<td>
+<p align="left">ID_MEDECIN
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Medecin
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_MEDECIN
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="405">Liste des attributs étendus de la colonne de table id Medecin</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="406">Colonne Id Personne de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="407">Fiche de la colonne Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#406">Id Personne</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#406">ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="408">Nom de contrainte de paramètre de contrôle de la colonne Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_PERSONNE_ETRE_JOI
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="409">Contrôles standard de la colonne Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="410">Règle de validation serveur de la colonne Id Personne de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="411">Liste de tous les objets dépendant de la colonne de table Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Id Personne
+</p>
+</td>
+<td>
+<p align="left">ID_PERSONNE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Id Personne
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_PERSONNE
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="412">Liste des attributs étendus de la colonne de table Id Personne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="413">Colonne id Specialiste de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="414">Fiche de la colonne id Specialiste de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#413">id Specialiste</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#413">ID_SPECIALISTE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="415">Nom de contrainte de paramètre de contrôle de la colonne id Specialiste de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_SPECIALISTE_ETRE_JOI
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="416">Contrôles standard de la colonne id Specialiste de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="417">Règle de validation serveur de la colonne id Specialiste de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="418">Liste de tous les objets dépendant de la colonne de table id Specialiste</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">id Specialiste
+</p>
+</td>
+<td>
+<p align="left">ID_SPECIALISTE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Specialiste
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_SPECIALISTE
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="419">Liste des attributs étendus de la colonne de table id Specialiste</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="420">Colonne Id Coordonne de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="421">Fiche de la colonne Id Coordonne de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#420">Id Coordonne</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#420">ID_COORDONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Type de données
+</p>
+</td>
+<td width="75%">
+<p align="left">integer
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Obligatoire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="422">Nom de contrainte de paramètre de contrôle de la colonne Id Coordonne de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">CKC_ID_COORDONNE_ETRE_JOI
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="423">Contrôles standard de la colonne Id Coordonne de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur minimale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur maximale
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Valeur par défaut
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unité
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Format
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Non modifiable
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Liste des valeurs
+</p>
+</td>
+<td width="75%">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="424">Règle de validation serveur de la colonne Id Coordonne de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">%MINMAX% and %LISTVAL% and %CASE% and %RULES%
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="425">Liste de tous les objets dépendant de la colonne de table Id Coordonne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Id Coordonne
+</p>
+</td>
+<td>
+<p align="left">ID_COORDONNE
+</p>
+</td>
+<td>
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Id Coordonne
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_COORDONNE
+</p>
+</td>
+<td class="TD2">
+<p align="left">Colonne d'index
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">&lt;Inconnu&gt;
+</p>
+</td>
+<td>
+<p align="left">Jointure de référence
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">Identifiant_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#428">IDENTIFIANT_1</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">Clé
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="426">Liste des attributs étendus de la colonne de table Id Coordonne</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Compressed
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">DefaultExt
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Chaîne)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="427">Liste des clés de la table etre joignable</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Primaire
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#428">Identifiant_1</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#428">IDENTIFIANT_1</a>
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="428">Clé Identifiant_1 de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="429">Fiche de la clé Identifiant_1 de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#428">Identifiant_1</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#428">IDENTIFIANT_1</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#368">etre joignable</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="430">Aperçu du code de la clé Identifiant_1 de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">if exists(<br />
+   select 1 from sys.sysconstraint k<br />
+      join sys.systab t on (t.object_id = k.table_object_id and t.table_name='ETRE_JOIGNABLE')<br />
+   where<br />
+      k.constraint_type = 'P'<br />
+) then<br />
+    alter table ETRE_JOIGNABLE<br />
+   delete primary key<br />
+end if;<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="431">Liste des colonnes de la clé de table Identifiant_1</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#378">Cli_Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#378">CLI_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#385">id Client</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#385">ID_CLIENT</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#392">Med_Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#392">MED_ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#399">id Medecin</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#399">ID_MEDECIN</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#406">Id Personne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#406">ID_PERSONNE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#413">id Specialiste</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#413">ID_SPECIALISTE</a>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#420">Id Coordonne</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#420">ID_COORDONNE</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="432">Liste de tous les objets dépendant de la clé de table Identifiant_1</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de classe
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#434">ETRE_JOIGNABLE_PK</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#434">ETRE_JOIGNABLE_PK</a>
+</p>
+</td>
+<td>
+<p align="left">Index
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="433">Liste des index de la table etre joignable</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+<td class="Header">
+<p align="center">Unique
+</p>
+</td>
+<td class="Header">
+<p align="center">Cluster
+</p>
+</td>
+<td class="Header">
+<p align="center">Primaire
+</p>
+</td>
+<td class="Header">
+<p align="center">Clé étrangère
+</p>
+</td>
+<td class="Header">
+<p align="center">Clé alternative
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#434">ETRE_JOIGNABLE_PK</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#434">ETRE_JOIGNABLE_PK</a>
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#439">ETRE_JOIGNABLE_FK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#439">ETRE_JOIGNABLE_FK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">X
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#444">ETRE_JOIGNABLE2_FK</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#444">ETRE_JOIGNABLE2_FK</a>
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#449">ETRE_JOIGNABLE3_FK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left"><a href="Rapp13.htm#449">ETRE_JOIGNABLE3_FK</a>
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">X
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left"><a href="Rapp13.htm#454">ETRE_JOIGNABLE4_FK</a>
+</p>
+</td>
+<td>
+<p align="left"><a href="Rapp13.htm#454">ETRE_JOIGNABLE4_FK</a>
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">X
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="434">Index ETRE_JOIGNABLE_PK de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="435">Fiche de l'index ETRE_JOIGNABLE_PK de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#434">ETRE_JOIGNABLE_PK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#434">ETRE_JOIGNABLE_PK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#368">etre joignable</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="436">Aperçu du code de l'index ETRE_JOIGNABLE_PK de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists ETRE_JOIGNABLE.ETRE_JOIGNABLE_PK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ETRE_JOIGNABLE_PK                                    */<br />
+/*==============================================================*/<br />
+create unique clustered index ETRE_JOIGNABLE_PK on ETRE_JOIGNABLE (<br />
+CLI_ID_PERSONNE ASC,<br />
+ID_CLIENT ASC,<br />
+MED_ID_PERSONNE ASC,<br />
+ID_MEDECIN ASC,<br />
+ID_PERSONNE ASC,<br />
+ID_SPECIALISTE ASC,<br />
+ID_COORDONNE ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="437">Liste des colonnes d'index de l'index de table ETRE_JOIGNABLE_PK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Cli_Id Personne
+</p>
+</td>
+<td>
+<p align="left">CLI_ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Client
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_CLIENT
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Med_Id Personne
+</p>
+</td>
+<td>
+<p align="left">MED_ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Medecin
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_MEDECIN
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Id Personne
+</p>
+</td>
+<td>
+<p align="left">ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Specialiste
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_SPECIALISTE
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Id Coordonne
+</p>
+</td>
+<td>
+<p align="left">ID_COORDONNE
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="438">Liste des attributs étendus de l'index de table ETRE_JOIGNABLE_PK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="439">Index ETRE_JOIGNABLE_FK de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="440">Fiche de l'index ETRE_JOIGNABLE_FK de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#439">ETRE_JOIGNABLE_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#439">ETRE_JOIGNABLE_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#368">etre joignable</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="441">Aperçu du code de l'index ETRE_JOIGNABLE_FK de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists ETRE_JOIGNABLE.ETRE_JOIGNABLE_FK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ETRE_JOIGNABLE_FK                                    */<br />
+/*==============================================================*/<br />
+create index ETRE_JOIGNABLE_FK on ETRE_JOIGNABLE (<br />
+CLI_ID_PERSONNE ASC,<br />
+ID_CLIENT ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="442">Liste des colonnes d'index de l'index de table ETRE_JOIGNABLE_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Cli_Id Personne
+</p>
+</td>
+<td>
+<p align="left">CLI_ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Client
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_CLIENT
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="443">Liste des attributs étendus de l'index de table ETRE_JOIGNABLE_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="444">Index ETRE_JOIGNABLE2_FK de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="445">Fiche de l'index ETRE_JOIGNABLE2_FK de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#444">ETRE_JOIGNABLE2_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#444">ETRE_JOIGNABLE2_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#368">etre joignable</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="446">Aperçu du code de l'index ETRE_JOIGNABLE2_FK de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists ETRE_JOIGNABLE.ETRE_JOIGNABLE2_FK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ETRE_JOIGNABLE2_FK                                   */<br />
+/*==============================================================*/<br />
+create index ETRE_JOIGNABLE2_FK on ETRE_JOIGNABLE (<br />
+MED_ID_PERSONNE ASC,<br />
+ID_MEDECIN ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="447">Liste des colonnes d'index de l'index de table ETRE_JOIGNABLE2_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Med_Id Personne
+</p>
+</td>
+<td>
+<p align="left">MED_ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Medecin
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_MEDECIN
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="448">Liste des attributs étendus de l'index de table ETRE_JOIGNABLE2_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="449">Index ETRE_JOIGNABLE3_FK de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="450">Fiche de l'index ETRE_JOIGNABLE3_FK de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#449">ETRE_JOIGNABLE3_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#449">ETRE_JOIGNABLE3_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#368">etre joignable</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="451">Aperçu du code de l'index ETRE_JOIGNABLE3_FK de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists ETRE_JOIGNABLE.ETRE_JOIGNABLE3_FK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ETRE_JOIGNABLE3_FK                                   */<br />
+/*==============================================================*/<br />
+create index ETRE_JOIGNABLE3_FK on ETRE_JOIGNABLE (<br />
+ID_PERSONNE ASC,<br />
+ID_SPECIALISTE ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="452">Liste des colonnes d'index de l'index de table ETRE_JOIGNABLE3_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Id Personne
+</p>
+</td>
+<td>
+<p align="left">ID_PERSONNE
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">id Specialiste
+</p>
+</td>
+<td class="TD2">
+<p align="left">ID_SPECIALISTE
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="453">Liste des attributs étendus de l'index de table ETRE_JOIGNABLE3_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<h2>
+<a name="454">Index ETRE_JOIGNABLE4_FK de la table etre joignable</a> 
+</h2>
+<h3>
+<a name="455">Fiche de l'index ETRE_JOIGNABLE4_FK de la table etre joignable</a> 
+</h3>
+<table class="Form" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header" width="25%">
+<p align="left">Nom
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#454">ETRE_JOIGNABLE4_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Code
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#454">ETRE_JOIGNABLE4_FK</a>
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Unique
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Cluster
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Primaire
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé étrangère
+</p>
+</td>
+<td width="75%">
+<p align="left">Oui
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Clé alternative
+</p>
+</td>
+<td width="75%">
+<p align="left">Non
+</p>
+</td>
+</tr>
+<tr>
+<td class="Header" width="25%">
+<p align="left">Table
+</p>
+</td>
+<td width="75%">
+<p align="left"><a href="Rapp13.htm#368">etre joignable</a>
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="456">Aperçu du code de l'index ETRE_JOIGNABLE4_FK de la table etre joignable</a> 
+</h3>
+<table class="Text" border="1" cellpadding="3" cellspacing="1" width="100%"><tr><td>
+<p align="left">drop index if exists ETRE_JOIGNABLE.ETRE_JOIGNABLE4_FK;<br />
+<br />
+/*==============================================================*/<br />
+/* Index : ETRE_JOIGNABLE4_FK                                   */<br />
+/*==============================================================*/<br />
+create index ETRE_JOIGNABLE4_FK on ETRE_JOIGNABLE (<br />
+ID_COORDONNE ASC<br />
+);<br />
+
+</p>
+</td></tr>
+</table><br />
+<h3>
+<a name="457">Liste des colonnes d'index de l'index de table ETRE_JOIGNABLE4_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Code
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Id Coordonne
+</p>
+</td>
+<td>
+<p align="left">ID_COORDONNE
+</p>
+</td>
+</tr>
+</table><br />
+<h3>
+<a name="458">Liste des attributs étendus de l'index de table ETRE_JOIGNABLE4_FK</a> 
+</h3>
+<table class="Grid" border="1" cellspacing="1" width="100%">
+<tr>
+<td class="Header">
+<p align="center">Nom
+</p>
+</td>
+<td class="Header">
+<p align="center">Type de données
+</p>
+</td>
+<td class="Header">
+<p align="center">Valeur
+</p>
+</td>
+<td class="Header">
+<p align="center">Nom de la cible
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">DelimitedBy
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">In
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">Limit
+</p>
+</td>
+<td>
+<p align="left">(Option physique)
+</p>
+</td>
+<td>
+<p align="left">&nbsp; 
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Notify
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Option physique)
+</p>
+</td>
+<td class="TD2">
+<p align="left">&nbsp; 
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p align="left">TextIndex
+</p>
+</td>
+<td>
+<p align="left">(Booléen)
+</p>
+</td>
+<td>
+<p align="left">false
+</p>
+</td>
+<td>
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+<tr>
+<td class="TD2">
+<p align="left">Virtual
+</p>
+</td>
+<td class="TD2">
+<p align="left">(Booléen)
+</p>
+</td>
+<td class="TD2">
+<p align="left">false
+</p>
+</td>
+<td class="TD2">
+<p align="left">SAP SQL Anywhere 16
+</p>
+</td>
+</tr>
+</table><br />
+<hr />
+<table><tr>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp12.htm">Précédent</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Accueil_BleuClair.html">Accueil</a></td></tr></table></td>
+<td width=4></td>
+<td><table class="NavGroup"><tr><td><a class="NavButton" href="Rapp14.htm">Suivant</a></td></tr></table></td></tr></table>
+<br />
+<br />
+</body>
+</html>

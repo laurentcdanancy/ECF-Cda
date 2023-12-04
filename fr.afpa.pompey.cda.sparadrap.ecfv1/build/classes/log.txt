@@ -1,0 +1,41 @@
+
+nov. 08, 2023 11:05:47 AM pages.test3 main
+INFO: ===============nouveau Log et niveau de log==================.
+nov. 08, 2023 11:05:48 AM pages.test3 main
+INFO: Ceci est un un log fr niveau informztif.
+nov. 08, 2023 11:05:48 AM pages.test3 main
+WARNING: Ceci est un un log fr niveau AVERTISSEMNT.
+nov. 08, 2023 11:05:48 AM pages.test3 main
+SEVERE: Ceci est un un log fr niveau HAUTE CRITIQUE.
+nov. 08, 2023 11:10:17 AM pages.test3 main
+INFO: ===============nouveau Log et niveau de log==================.
+nov. 08, 2023 11:10:17 AM pages.test3 main
+INFO: Ceci est un un log fr niveau informztif.
+nov. 08, 2023 11:10:17 AM pages.test3 main
+WARNING: Ceci est un un log fr niveau AVERTISSEMNT.
+nov. 08, 2023 11:10:17 AM pages.test3 main
+SEVERE: Ceci est un un log fr niveau HAUTE CRITIQUE.
+nov. 08, 2023 11:11:19 AM pages.test3 main
+INFO: ===============nouveau Log et niveau de log==================.
+nov. 08, 2023 11:11:19 AM pages.test3 main
+INFO: Ceci est un un log fr niveau informztif.
+nov. 08, 2023 11:11:19 AM pages.test3 main
+WARNING: Ceci est un un log fr niveau AVERTISSEMNT.
+nov. 08, 2023 11:11:19 AM pages.test3 main
+SEVERE: Ceci est un un log fr niveau HAUTE CRITIQUE.
+nov. 08, 2023 11:36:51 AM pages.test3 main
+INFO: ===============nouveau Log et niveau de log==================.
+nov. 08, 2023 11:36:51 AM pages.test3 main
+INFO: Ceci est un un log fr niveau informztif.
+nov. 08, 2023 11:36:51 AM pages.test3 main
+WARNING: Ceci est un un log fr niveau AVERTISSEMNT.
+nov. 08, 2023 11:36:51 AM pages.test3 main
+SEVERE: Ceci est un un log fr niveau HAUTE CRITIQUE.
+nov. 08, 2023 10:34:09 PM pages.test3 main
+INFO: ===============nouveau Log et niveau de log==================.
+nov. 08, 2023 10:34:09 PM pages.test3 main
+INFO: Ceci est un un log fr niveau informztif.
+nov. 08, 2023 10:34:09 PM pages.test3 main
+WARNING: Ceci est un un log fr niveau AVERTISSEMNT.
+nov. 08, 2023 10:34:09 PM pages.test3 main
+SEVERE: Ceci est un un log fr niveau HAUTE CRITIQUE.

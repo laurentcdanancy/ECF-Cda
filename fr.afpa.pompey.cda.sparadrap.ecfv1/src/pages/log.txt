@@ -1,0 +1,2 @@
+déc. 04, 2023 3:11:49 AM pages.test2 main
+INFO: Ceci est un message de journalisation.

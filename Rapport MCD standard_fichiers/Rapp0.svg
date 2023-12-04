@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="339mm" xmlns="http://www.w3.org/2000/svg" height="309mm" version="1.1" viewBox="0 0 1284 1169" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <path d="M239,666 L239,658 A8,8 0 0,1 247,650 L918,650" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <text x="226" y="646" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,1</text>
+   <polyline fill="none" points="826,429 826,513" stroke="#8080ff" stroke-width="1"/>
+   <text x="838" y="455" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,1</text>
+   <path d="M523,274 L523,445 A8,8 0 0,1 515,453 L390,453 A8,8 0 0,0 382,461 L382,644" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <polyline fill="none" points="382,655 382,666" stroke="#8080ff" stroke-width="1"/>
+   <path d="M382,655 A5,5 0 0,0 387,650" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <line x1="387" x2="387" y1="650" y2="650" stroke="#8080ff" stroke-width="1"/>
+   <path d="M387,650 A5,5 0 0,0 382,644" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <text x="369" y="646" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0,n</text>
+   <path d="M552,252 L756,252 A8,8 0 0,1 764,260 L764,301" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <text x="751" y="281" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0,n</text>
+   <polyline fill="none" points="520,176 520,230" stroke="#8080ff" stroke-width="1"/>
+   <text x="532" y="201" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,n</text>
+   <path d="M761,544 L716,544 A8,8 0 0,0 708,552 L708,644" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <polyline fill="none" points="708,655 708,687" stroke="#8080ff" stroke-width="1"/>
+   <path d="M708,655 A5,5 0 0,0 713,650" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <line x1="713" x2="713" y1="650" y2="650" stroke="#8080ff" stroke-width="1"/>
+   <path d="M713,650 A5,5 0 0,0 708,644" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <text x="696" y="668" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,1</text>
+   <path d="M1128,733 L1128,541 A8,8 0 0,0 1120,533 L893,533" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <text x="1115" y="713" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,1</text>
+   <path d="M887,773 L953,773 A8,8 0 0,0 961,765 L961,672" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <text x="915" y="770" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,n</text>
+   <path d="M986,733 L986,719 A8,8 0 0,0 978,711 L969,711 A8,8 0 0,1 961,703 L961,672" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <text x="974" y="713" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,n</text>
+   <a target="_parent" xlink:href="Rapp47.htm#189">
+      <polyline fill="none" points="833,938 833,1037" stroke="#800000" stroke-width="1"/>
+      <polygon fill="#800000" points="833,1037 830,1023 836,1023" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+      <text x="833" y="990" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Heritage_1</text>
+   </a>
+   <path d="M239,870 L239,924 A8,8 0 0,0 247,932 L813,932" fill="none" stroke="#800000" stroke-width="1"/>
+   <path d="M833,859 L833,887 A5,5 0 0,1 828,892 L828,892 A5,5 0 0,0 823,897 L823,926" fill="none" stroke="#800000" stroke-width="1"/>
+   <path d="M1128,796 L1128,924 A8,8 0 0,1 1120,932 L834,932" fill="none" stroke="#800000" stroke-width="1"/>
+   <polyline fill="none" points="182,870 182,972" stroke="#8080ff" stroke-width="1"/>
+   <text x="195" y="895" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,1</text>
+   <path d="M226,976 L700,976 A8,8 0 0,0 708,968 L708,937" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <polyline fill="none" points="708,926 708,859" stroke="#8080ff" stroke-width="1"/>
+   <path d="M708,937 A5,5 0 0,0 713,932" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <line x1="713" x2="713" y1="932" y2="932" stroke="#8080ff" stroke-width="1"/>
+   <path d="M713,932 A5,5 0 0,0 708,926" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <text x="721" y="884" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,1</text>
+   <polyline fill="none" points="232,992 828,992" stroke="#8080ff" stroke-width="1"/>
+   <path d="M839,992 L1136,992 A8,8 0 0,0 1144,984 L1144,796" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <path d="M839,992 A5,5 0 0,0 833,987" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <line x1="833" x2="833" y1="987" y2="987" stroke="#8080ff" stroke-width="1"/>
+   <path d="M833,987 A5,5 0 0,0 828,992" fill="none" stroke="#8080ff" stroke-width="1"/>
+   <text x="1156" y="821" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,1</text>
+   <polyline fill="none" points="182,1069 182,1012" stroke="#8080ff" stroke-width="1"/>
+   <text x="170" y="1050" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,1</text>
+   <polyline fill="none" points="152,142 152,213" stroke="#8080ff" stroke-width="1"/>
+   <text x="164" y="168" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,1</text>
+   <polyline fill="none" points="152,327 152,257" stroke="#8080ff" stroke-width="1"/>
+   <text x="140" y="307" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,n</text>
+   <polyline fill="none" points="145,403 145,506" stroke="#8080ff" stroke-width="1"/>
+   <text x="157" y="428" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,n</text>
+   <polyline fill="none" points="145,666 145,550" stroke="#8080ff" stroke-width="1"/>
+   <text x="133" y="646" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1,1</text>
+   <a target="_parent" xlink:href="Rapp9.htm#11">
+      <defs>
+         <linearGradient id="Gradient1" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <rect x="57" y="666" fill="url(#Gradient1)" width="364" height="204" stroke="#808040" stroke-width="1"/>
+      <text x="239" y="677" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Client</text>
+      <line x1="57" x2="421" y1="683" y2="683" stroke="#808040" stroke-width="1"/>
+      <text x="61" y="692" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">id Client</text>
+      <text x="61" y="705" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Numero De Securite Social Client</text>
+      <text x="61" y="718" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Date Naissance Client</text>
+      <text x="61" y="731" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Mutuelle Client</text>
+      <text x="61" y="744" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Medecin Traintant Client</text>
+      <text x="61" y="757" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Medecin Specialist Client</text>
+      <text x="228" y="692" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;pi&gt;</text>
+      <text x="257" y="692" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">Entier</text>
+      <text x="257" y="705" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Entier long</text>
+      <text x="257" y="718" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Date</text>
+      <text x="257" y="731" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (30)</text>
+      <text x="257" y="744" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (30)</text>
+      <text x="257" y="757" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (30)</text>
+      <text x="372" y="692" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;O&gt;</text>
+      <text x="372" y="705" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="372" y="718" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="372" y="731" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="372" y="744" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <line x1="57" x2="421" y1="765" y2="765" stroke="#808040" stroke-width="1"/>
+      <text x="61" y="774" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Identifiant_1</text>
+      <text x="129" y="774" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;pi&gt;</text>
+   </a>
+   <a target="_parent" xlink:href="Rapp33.htm#121">
+      <defs>
+         <linearGradient id="Gradient2" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <rect x="486" y="61" fill="url(#Gradient2)" width="361" height="115" stroke="#808040" stroke-width="1"/>
+      <text x="666" y="72" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Medicament</text>
+      <line x1="486" x2="847" y1="78" y2="78" stroke="#808040" stroke-width="1"/>
+      <text x="491" y="87" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">id Medicament</text>
+      <text x="491" y="100" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Nom Medicament</text>
+      <text x="491" y="113" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Categorie Medicament</text>
+      <text x="491" y="126" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Prix Medicament</text>
+      <text x="491" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Date De Mise En Service Medicament</text>
+      <text x="491" y="152" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Quantite Medicament</text>
+      <text x="678" y="87" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;pi&gt;</text>
+      <text x="707" y="87" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">Entier</text>
+      <text x="707" y="100" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (50)</text>
+      <text x="707" y="113" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (50)</text>
+      <text x="707" y="126" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Décimal (3,2)</text>
+      <text x="707" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Date</text>
+      <text x="707" y="152" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Entier</text>
+      <text x="822" y="87" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;O&gt;</text>
+      <text x="822" y="100" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="822" y="113" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="822" y="126" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="822" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="822" y="152" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <line x1="486" x2="847" y1="160" y2="160" stroke="#808040" stroke-width="1"/>
+      <text x="491" y="169" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Identifiant_1</text>
+      <text x="559" y="169" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;pi&gt;</text>
+   </a>
+   <a target="_parent" xlink:href="Rapp44.htm#169">
+      <defs>
+         <linearGradient id="Gradient3" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <rect x="619" y="301" fill="url(#Gradient3)" width="290" height="128" stroke="#808040" stroke-width="1"/>
+      <text x="764" y="312" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Ordonnace</text>
+      <line x1="619" x2="909" y1="318" y2="318" stroke="#808040" stroke-width="1"/>
+      <text x="623" y="327" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">id ordonnance</text>
+      <text x="623" y="340" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Date</text>
+      <text x="699" y="327" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;pi&gt;</text>
+      <text x="728" y="327" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">Numérique</text>
+      <text x="728" y="340" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Date</text>
+      <text x="788" y="327" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;O&gt;</text>
+      <text x="788" y="340" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <line x1="619" x2="909" y1="348" y2="348" stroke="#808040" stroke-width="1"/>
+      <text x="623" y="357" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Identifiant_1</text>
+      <text x="691" y="357" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;pi&gt;</text>
+   </a>
+   <a target="_parent" xlink:href="Rapp30.htm#105">
+      <defs>
+         <linearGradient id="Gradient4" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <rect x="530" y="687" fill="url(#Gradient4)" width="357" height="172" stroke="#808040" stroke-width="1"/>
+      <text x="708" y="698" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Medecin</text>
+      <line x1="530" x2="887" y1="704" y2="704" stroke="#808040" stroke-width="1"/>
+      <text x="534" y="713" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">id Medecin</text>
+      <text x="534" y="726" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Numero de Agreement Medecin</text>
+      <text x="693" y="713" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;pi&gt;</text>
+      <text x="722" y="713" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;Indéfini&gt;</text>
+      <text x="722" y="726" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Entier long</text>
+      <text x="782" y="713" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;O&gt;</text>
+      <text x="782" y="726" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <line x1="530" x2="887" y1="734" y2="734" stroke="#808040" stroke-width="1"/>
+      <text x="534" y="743" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Identifiant_1</text>
+      <text x="602" y="743" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;pi&gt;</text>
+   </a>
+   <a target="_parent" xlink:href="Rapp51.htm#204">
+      <defs>
+         <linearGradient id="Gradient5" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <rect x="986" y="733" fill="url(#Gradient5)" width="283" height="63" stroke="#808040" stroke-width="1"/>
+      <text x="1127" y="744" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Specialiste</text>
+      <line x1="986" x2="1269" y1="750" y2="750" stroke="#808040" stroke-width="1"/>
+      <text x="991" y="759" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">id Specialiste</text>
+      <text x="991" y="772" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Specialite Specialiste</text>
+      <text x="1102" y="759" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;pi&gt;</text>
+      <text x="1131" y="759" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">Entier</text>
+      <text x="1131" y="772" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (50)</text>
+      <text x="1246" y="759" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;O&gt;</text>
+      <text x="1246" y="772" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <line x1="986" x2="1269" y1="780" y2="780" stroke="#808040" stroke-width="1"/>
+      <text x="991" y="789" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Identifiant_1</text>
+      <text x="1059" y="789" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;pi&gt;</text>
+   </a>
+   <a target="_parent" xlink:href="Rapp40.htm#152">
+      <defs>
+         <linearGradient id="Gradient6" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <rect x="15" y="327" fill="url(#Gradient6)" width="313" height="76" stroke="#808040" stroke-width="1"/>
+      <text x="171" y="338" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Mutuelle</text>
+      <line x1="15" x2="328" y1="344" y2="344" stroke="#808040" stroke-width="1"/>
+      <text x="20" y="353" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">id Mutuelle</text>
+      <text x="20" y="366" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Nom Mutuelle Mutuelle</text>
+      <text x="20" y="379" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Taux de Prise En Charge Mutuelle</text>
+      <text x="191" y="353" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Entier</text>
+      <text x="191" y="366" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (50)</text>
+      <text x="191" y="379" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Décimal (3,2)</text>
+      <text x="306" y="353" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="306" y="366" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="306" y="379" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <line x1="15" x2="328" y1="387" y2="387" stroke="#808040" stroke-width="1"/>
+   </a>
+   <defs>
+      <linearGradient id="Gradient7" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+         <stop offset="5%" stop-color="#ffffff"/>
+         <stop offset="95%" stop-color="#d0d0ff"/>
+      </linearGradient>
+   </defs>
+   <rect x="918" y="628" rx="16" ry="22" fill="url(#Gradient7)" width="85" height="44" stroke="#8080ff" stroke-width="1"/>
+   <text x="961" y="644" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">consulté par</text>
+   <line x1="918" x2="1003" y1="650" y2="650" stroke="#8080ff" stroke-width="1"/>
+   <defs>
+      <linearGradient id="Gradient8" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+         <stop offset="5%" stop-color="#ffffff"/>
+         <stop offset="95%" stop-color="#d0d0ff"/>
+      </linearGradient>
+   </defs>
+   <rect x="759" y="513" rx="15" ry="20" fill="url(#Gradient8)" width="134" height="40" stroke="#8080ff" stroke-width="1"/>
+   <text x="826" y="524" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Prescrit Medicament</text>
+   <line x1="759" x2="893" y1="530" y2="530" stroke="#8080ff" stroke-width="1"/>
+   <a target="_parent" xlink:href="Rapp2.htm#2">
+      <defs>
+         <linearGradient id="Gradient9" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#d0d0ff"/>
+         </linearGradient>
+      </defs>
+      <rect x="488" y="230" rx="16" ry="22" fill="url(#Gradient9)" width="64" height="44" stroke="#8080ff" stroke-width="1"/>
+      <text x="520" y="247" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Acheter</text>
+      <line x1="488" x2="552" y1="253" y2="253" stroke="#8080ff" stroke-width="1"/>
+   </a>
+   <a target="_parent" xlink:href="Rapp47.htm#184">
+      <defs>
+         <linearGradient id="Gradient10" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <rect x="813" y="1037" fill="url(#Gradient10)" width="340" height="105" stroke="#808040" stroke-width="1"/>
+      <text x="983" y="1048" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Personne</text>
+      <line x1="813" x2="1153" y1="1054" y2="1054" stroke="#808040" stroke-width="1"/>
+      <text x="817" y="1063" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">Id Personne</text>
+      <text x="817" y="1076" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Nom Personne</text>
+      <text x="817" y="1088" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Prenom Personne</text>
+      <text x="909" y="1063" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;pi&gt;</text>
+      <text x="938" y="1063" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">Entier</text>
+      <text x="938" y="1076" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (30)</text>
+      <text x="938" y="1088" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (30)</text>
+      <text x="1053" y="1063" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;O&gt;</text>
+      <text x="1053" y="1076" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="1053" y="1088" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <line x1="813" x2="1153" y1="1096" y2="1096" stroke="#808040" stroke-width="1"/>
+      <text x="817" y="1105" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Identifiant_1</text>
+      <text x="885" y="1105" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;pi&gt;</text>
+   </a>
+   <a target="_parent" xlink:href="Rapp47.htm#189">
+      <defs>
+         <linearGradient id="Gradient11" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <defs>
+         <linearGradient id="Gradient12" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <path d="M834,938 A10,12 0 0,0 813,938 L823,938 Z" fill="url(#Gradient12)" stroke="#800000" stroke-width="1"/>
+   </a>
+   <a target="_parent" xlink:href="Rapp16.htm#43">
+      <defs>
+         <linearGradient id="Gradient13" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <rect x="54" y="1069" fill="url(#Gradient13)" width="249" height="85" stroke="#808040" stroke-width="1"/>
+      <text x="178" y="1080" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Coordonnee</text>
+      <line x1="54" x2="303" y1="1086" y2="1086" stroke="#808040" stroke-width="1"/>
+      <text x="59" y="1095" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">Id Coordonne</text>
+      <text x="59" y="1108" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Adresse</text>
+      <text x="59" y="1121" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Ville</text>
+      <text x="59" y="1134" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Telephone</text>
+      <text x="59" y="1147" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Email</text>
+      <text x="131" y="1095" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;pi&gt;</text>
+      <text x="160" y="1095" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">Entier</text>
+      <text x="160" y="1108" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (255)</text>
+      <text x="160" y="1121" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Entier</text>
+      <text x="160" y="1134" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Entier long</text>
+      <text x="160" y="1147" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (255)</text>
+      <text x="281" y="1095" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;O&gt;</text>
+      <text x="281" y="1108" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="281" y="1121" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="281" y="1134" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="281" y="1147" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+   </a>
+   <defs>
+      <linearGradient id="Gradient14" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+         <stop offset="5%" stop-color="#ffffff"/>
+         <stop offset="95%" stop-color="#d0d0ff"/>
+      </linearGradient>
+   </defs>
+   <rect x="133" y="972" rx="15" ry="20" fill="url(#Gradient14)" width="99" height="40" stroke="#8080ff" stroke-width="1"/>
+   <text x="150" y="983" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">etre joignable</text>
+   <line x1="133" x2="232" y1="989" y2="989" stroke="#8080ff" stroke-width="1"/>
+   <a target="_parent" xlink:href="Rapp22.htm#70">
+      <defs>
+         <linearGradient id="Gradient15" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+            <stop offset="5%" stop-color="#ffffff"/>
+            <stop offset="95%" stop-color="#e9ca83"/>
+         </linearGradient>
+      </defs>
+      <rect x="19" y="15" fill="url(#Gradient15)" width="280" height="127" stroke="#808040" stroke-width="1"/>
+      <text x="159" y="26" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Coordonnees Mutuelle</text>
+      <line x1="19" x2="299" y1="32" y2="32" stroke="#808040" stroke-width="1"/>
+      <text x="24" y="41" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">id Adresse Mutuelle</text>
+      <text x="24" y="54" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Adresse Mutuelle</text>
+      <text x="24" y="67" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Code Postal</text>
+      <text x="24" y="80" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Ville</text>
+      <text x="24" y="93" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Telephone</text>
+      <text x="24" y="106" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Email</text>
+      <text x="24" y="119" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Departement</text>
+      <text x="125" y="41" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;pi&gt;</text>
+      <text x="154" y="41" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;Indéfini&gt;</text>
+      <text x="154" y="54" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (255)</text>
+      <text x="154" y="67" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Entier</text>
+      <text x="154" y="80" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Entier</text>
+      <text x="154" y="93" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Entier long</text>
+      <text x="154" y="106" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Caractère variable (255)</text>
+      <text x="154" y="119" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Entier</text>
+      <text x="275" y="41" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start" text-decoration="underline">&lt;O&gt;</text>
+      <text x="275" y="54" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="275" y="67" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="275" y="80" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <text x="275" y="93" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;O&gt;</text>
+      <line x1="19" x2="299" y1="127" y2="127" stroke="#808040" stroke-width="1"/>
+      <text x="24" y="136" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">Identifiant_1</text>
+      <text x="92" y="136" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="start">&lt;pi&gt;</text>
+   </a>
+   <defs>
+      <linearGradient id="Gradient16" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+         <stop offset="5%" stop-color="#ffffff"/>
+         <stop offset="95%" stop-color="#d0d0ff"/>
+      </linearGradient>
+   </defs>
+   <rect x="120" y="213" rx="16" ry="22" fill="url(#Gradient16)" width="64" height="44" stroke="#8080ff" stroke-width="1"/>
+   <text x="152" y="229" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">localiser</text>
+   <line x1="120" x2="184" y1="235" y2="235" stroke="#8080ff" stroke-width="1"/>
+   <defs>
+      <linearGradient id="Gradient17" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
+         <stop offset="5%" stop-color="#ffffff"/>
+         <stop offset="95%" stop-color="#d0d0ff"/>
+      </linearGradient>
+   </defs>
+   <rect x="107" y="506" rx="16" ry="22" fill="url(#Gradient17)" width="76" height="44" stroke="#8080ff" stroke-width="1"/>
+   <text x="145" y="522" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">couvert par</text>
+   <line x1="107" x2="183" y1="528" y2="528" stroke="#8080ff" stroke-width="1"/>
+</svg>
